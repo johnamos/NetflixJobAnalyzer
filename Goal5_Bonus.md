@@ -10,4 +10,13 @@ I created larger data files to test the performance characteristics of the solut
 The profiling data from the Java Flight Recorder dump shows that over 70% of the total CPU time was consumed by parsing dates and times in the following two methods:
 1. *java.time.LocalTime.parse(CharSequence)*
 1. *java.time.LocalDate.parse(CharSequence)*
+### Recommended changes for improving performance and scalability
+##### Performance
+The analysis above shows that over 70% of the CPU time is consumed by parsing dates and times, so single-thread performance may be improved by using an improved parser or avoiding parsing by using cached values.
+##### Scalability
+The current solution runs in a single thread, and scalability can be improved by distributing the work among multiple threads and multiple nodes.  The best way to do this is to use a data processing engine like Apach Spark.  The workload can be divided up in several ways:
+* **Log file** where each log file is read and preprocessed by one thread
+* **Date** one thread can process a single day of data from a log file
+* **Owner** one thread can process jobs from a single owner
+
 
