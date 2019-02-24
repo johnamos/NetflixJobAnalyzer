@@ -81,3 +81,4 @@ job_F started late on 2018-07-07 because upstream job_E started late due to fail
  1. Each job is scheduled to run only once per day, although it may fail several times before succeeding.
  1. The jobs start and finish within a calendar day.
  1. The order of the data in the log files is irrelevant.  The job metadata and job execution data can be in any order.
+ 1. Lines of data that cannot be parsed are skipped and processing continues with the remainder of the input file.  The reason the line was skipped is written to the log by *CsvReader* at *java.util.logging.Level.FINE* level.
