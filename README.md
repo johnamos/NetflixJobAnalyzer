@@ -66,8 +66,8 @@ sv C:\eclipse-workspace\NetflixJobs\test\com\netflix\dpi\job\analyzer\job_execut
 User provided date - 2018-07-07
 
 | job_name | actual_start_time | expected_start_time |
-| job_E    | 03:15             | 02:40               |
-| job_F    | 03:45             | 03:10               |
+| job_E    | 03:15:00          | 02:40:00            |
+| job_F    | 03:45:00          | 03:10:00            |
 
 C:\eclipse-workspace\NetflixJobAnalyzer>java -cp bin com.netflix.dpi.job.analyzer.JobAnalyzerCli lateStartReason job_F 2018-07-07 C:\eclipse-workspace\NetflixJobs\test\com\netflix\dpi\job\analyzer\job
 _metadata.csv C:\eclipse-workspace\NetflixJobs\test\com\netflix\dpi\job\analyzer\job_execution_log.csv
