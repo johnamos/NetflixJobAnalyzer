@@ -3,6 +3,7 @@ package com.netflix.dpi.job.analyzer;
 import java.io.InputStream;
 import java.time.Duration;
 import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
 import java.util.Map;
 import java.util.Set;
 import java.util.TreeSet;
@@ -106,10 +107,12 @@ public class JobAnalyzer {
     System.out.println(String.format(LATE_DATE_PREFIX, startDate));
     System.out.println();
     System.out.println(LATE_HEADER);
+    DateTimeFormatter formatter = DateTimeFormatter.ofPattern("HH:mm:ss");
     for (Map.Entry<String, LateJobDetails> entry : lateMap.entrySet()) {
       LateJobDetails details = entry.getValue();
-      System.out.println(String.format(LATE_ROW_FORMAT, entry.getKey(), details.getActualStart(),
-          details.getExpectedStart()));
+      System.out.println(
+          String.format(LATE_ROW_FORMAT, entry.getKey(), details.getActualStart().format(formatter),
+              details.getExpectedStart().format(formatter)));
     }
   }
 
