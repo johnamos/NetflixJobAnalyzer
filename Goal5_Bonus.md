@@ -1,7 +1,7 @@
 ## Scaling to higher data volume
 This document describes the performance characteristics of the solution and proposes changes to accommodate higher data volumes.
 ### Performance
-I created larger data files to test the performance characteristics of the solution.  The job metadata file contained 36K rows and the job execution file contained 350K rows.  Running all four reports in sequence completes in less than two minutes, with low memory and CPU usage.  The images below are from a Java Flight Recorder dump:
+I created larger data files to test the performance characteristics of the solution.  The job metadata file contained 36K rows and the job execution file contained 350K rows ([zip file](https://github.com/johnamos/NetflixJobAnalyzer/blob/master/test/com/netflix/dpi/job/analyzer/large-data.zip)).  Running all four reports in sequence completes in less than two minutes on my laptop, with low memory and CPU usage.  The images below are from a Java Flight Recorder dump:
 ##### Memory usage
 ![Imgur](https://i.imgur.com/GgLd5Vc.png)
 ##### CPU usage
