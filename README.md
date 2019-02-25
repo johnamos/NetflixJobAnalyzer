@@ -87,3 +87,6 @@ job_F started late on 2018-07-07 because upstream job_E started late due to fail
 ## JUnit tests and code coverage
 There is one JUnit test class, *JobAnalyzerTest*, that tests all four report types and achieves 77% code coverage for all source files in the project, as shown in the image below from the [EclEmma Eclipse plugin](https://www.eclemma.org/):
 ![code coverage](https://i.imgur.com/qG5Vs3A.png)
+
+## Scalability
+Please refer to Goal5_Bonus.md in this folder for performance analysis and scalability recommendations.
