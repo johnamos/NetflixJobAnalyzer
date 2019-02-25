@@ -17,7 +17,9 @@ public class JobAnalyzerCli {
   private static final Logger LOGGER = Logger.getLogger(JobAnalyzerCli.class.getName());
 
   public static void main(String[] args) {
-    if ("lineage".equals(args[0])) {
+    if (args.length < 2) {
+      writeUsage();
+    } else if ("lineage".equals(args[0])) {
       writeLineage(args);
     } else if ("stats".equals(args[0])) {
       writeStats(args);
